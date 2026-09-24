@@ -1,19 +1,23 @@
 # Feng Cao Lab
 
-A small Hello World website for fengcaolab.org. No installation or build step is needed. Open `index.html` to preview it; edit that file to change the page.
+A simple Hello World website for https://fengcaolab.org, hosted on GitHub Pages.
 
-## Publish on GitHub
+## Update the website
 
-1. Create a public repository named `fengcaolab.org`.
-2. Upload these files to its main folder, not inside another folder.
-3. In the repository's Settings → Pages, choose **Deploy from a branch**, then **main** and **/(root)**. Save.
-4. Set **Custom domain** to `fengcaolab.org` and save before changing Cloudflare's website address records.
+Edit `index.html` and commit the change to `main`. GitHub Pages automatically publishes updates. No installation, framework, or build command is needed. You can open `index.html` in a browser to preview it locally.
 
-GitHub also offers domain ownership verification under your account's Settings → Pages. It supplies a code to add to Cloudflare, then lets you confirm ownership.
+## Hosting settings
 
-## Connect Cloudflare
+In this repository's Settings → Pages:
 
-Open fengcaolab.org → DNS → Records. Add these records with **Proxy status: DNS only** and **TTL: Auto**:
+- Source: Deploy from a branch
+- Branch: `main`, folder: `/(root)`
+- Custom domain: `fengcaolab.org`
+- Enable Enforce HTTPS after GitHub issues the certificate.
+
+## Cloudflare domain settings
+
+These records connect the domain to GitHub Pages. Use **DNS only** (gray cloud) and **TTL: Auto**.
 
 | Type | Name | Content |
 | --- | --- | --- |
@@ -23,14 +27,12 @@ Open fengcaolab.org → DNS → Records. Add these records with **Proxy status: 
 | A | @ | 185.199.111.153 |
 | CNAME | www | axings.github.io |
 
-Review any existing website records for conflicts first; keep unrelated email and verification records.
-
-Once GitHub's domain check succeeds, enable **Enforce HTTPS** in Pages settings. DNS and certificate setup can take up to 24 hours. Then visit https://fengcaolab.org.
+GitHub's domain check passed on September 24, 2026. The `www` address redirects to `fengcaolab.org` once deployment and HTTPS provisioning finish.
 
 ## Files
 
-- `index.html`: the entire page, including its styling.
-- `CNAME`: the website's custom domain.
-- `.nojekyll`: tells GitHub to publish these files as supplied.
+- `index.html`: the page and its styling.
+- `CNAME`: the custom domain.
+- `.nojekyll`: publishes the files directly without Jekyll processing.
 
-Official setup reference: https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site
+[GitHub's custom domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
