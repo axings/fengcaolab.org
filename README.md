@@ -1,38 +1,32 @@
 # Feng Cao Lab
 
-A simple Hello World website for https://fengcaolab.org, hosted on GitHub Pages.
+The public lab website at **https://fengcaolab.org**, hosted with GitHub Pages.
 
-## Update the website
+## Edit the site
 
-Edit `index.html` and commit the change to `main`. GitHub Pages automatically publishes updates. No installation, framework, or build command is needed. You can open `index.html` in a browser to preview it locally.
+- `index.html`: research, biography, publications, teaching, and contact content.
+- `assets/site.css`: responsive layout, colors, typography, and mobile styling.
+- `assets/site.js`: mobile navigation, section indicator, and copyright year.
+- `assets/neural-circuits.svg`: original conceptual neural-circuit illustration.
+- `assets/feng-cao.jpg`: Feng Cao's official Western Washington University portrait.
+- `CNAME`: custom domain configuration. Keep this file set to `fengcaolab.org`.
 
-## Hosting settings
+This is a static website with no framework, build step, external fonts, analytics, or server dependency. Open `index.html` locally to preview, or run `python3 -m http.server 8000` in this directory. Changes committed to `main` deploy through GitHub Pages.
 
-In this repository's Settings → Pages:
+## Content and credits
 
-- Source: Deploy from a branch
-- Branch: `main`, folder: `/(root)`
-- Custom domain: `fengcaolab.org`
-- Enable Enforce HTTPS after GitHub issues the certificate.
+The research themes and biography were adapted from the supplied `cao_lab_website_v4.html`. Selected publications include work completed during Dr. Cao's previous training.
 
-## Cloudflare domain settings
+Official sources:
+- Faculty profile and portrait: https://bns.wwu.edu/caof2
+- Behavioral Neuroscience Program: https://bns.wwu.edu/
+- Student research opportunities: https://bns.wwu.edu/research-opportunities
+- 2025 publication: https://doi.org/10.1038/s41467-025-63464-5
+- 2020 publication: https://doi.org/10.1038/s41467-020-17560-3
+- ORCID: https://orcid.org/0000-0003-1220-5671
 
-These records connect the domain to GitHub Pages. Use **DNS only** (gray cloud) and **TTL: Auto**.
+Design references supplied by the site owner: Bruchas Lab, Z Lab, Tao Lab, and Tye Lab. The layout, styling, icons, and circuit illustrations are original; no images or written content were copied from those labs.
 
-| Type | Name | Content |
-| --- | --- | --- |
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | axings.github.io |
+## Domain
 
-GitHub's domain check passed on September 24, 2026. The `www` address redirects to `fengcaolab.org` once deployment and HTTPS provisioning finish.
-
-## Files
-
-- `index.html`: the page and its styling.
-- `CNAME`: the custom domain.
-- `.nojekyll`: publishes the files directly without Jekyll processing.
-
-[GitHub's custom domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+The domain is registered with Cloudflare and points to GitHub Pages. GitHub Pages serves this repository from the root of `main`. HTTPS is enabled in the repository's Pages settings. No Cloudflare changes are required when editing the website.
